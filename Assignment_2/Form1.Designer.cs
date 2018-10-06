@@ -30,27 +30,27 @@
         {
             this.NameofApp = new System.Windows.Forms.Label();
             this.CashierLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.UserNameInputBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.NumChild = new System.Windows.Forms.TextBox();
+            this.NumStud = new System.Windows.Forms.TextBox();
+            this.NumAdults = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.NumAdults = new System.Windows.Forms.TextBox();
-            this.NumStud = new System.Windows.Forms.TextBox();
-            this.NumChild = new System.Windows.Forms.TextBox();
             this.CalculateButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.SummaryButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.CashierSummary = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.CashierNameOutput = new System.Windows.Forms.Label();
-            this.TotalTicketSoldOutput = new System.Windows.Forms.Label();
-            this.TotalReciptsOutput = new System.Windows.Forms.Label();
             this.AvgPricePaidOutput = new System.Windows.Forms.Label();
+            this.TotalReciptsOutput = new System.Windows.Forms.Label();
+            this.TotalTicketSoldOutput = new System.Windows.Forms.Label();
+            this.CashierNameOutput = new System.Windows.Forms.Label();
+            this.AvgP = new System.Windows.Forms.Label();
+            this.TotalRcpt = new System.Windows.Forms.Label();
+            this.SoldTickets = new System.Windows.Forms.Label();
+            this.cashier = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.CashierSummary.SuspendLayout();
             this.SuspendLayout();
@@ -74,12 +74,12 @@
             this.CashierLabel.TabIndex = 1;
             this.CashierLabel.Text = "Cashier Name";
             // 
-            // textBox1
+            // UserNameInputBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(171, 128);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(221, 20);
-            this.textBox1.TabIndex = 2;
+            this.UserNameInputBox.Location = new System.Drawing.Point(171, 128);
+            this.UserNameInputBox.Name = "UserNameInputBox";
+            this.UserNameInputBox.Size = new System.Drawing.Size(221, 20);
+            this.UserNameInputBox.TabIndex = 2;
             // 
             // groupBox1
             // 
@@ -95,6 +95,28 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tickets Sold";
+            // 
+            // NumChild
+            // 
+            this.NumChild.Location = new System.Drawing.Point(122, 131);
+            this.NumChild.Name = "NumChild";
+            this.NumChild.Size = new System.Drawing.Size(148, 20);
+            this.NumChild.TabIndex = 5;
+            // 
+            // NumStud
+            // 
+            this.NumStud.Location = new System.Drawing.Point(123, 86);
+            this.NumStud.Name = "NumStud";
+            this.NumStud.Size = new System.Drawing.Size(147, 20);
+            this.NumStud.TabIndex = 4;
+            // 
+            // NumAdults
+            // 
+            this.NumAdults.Location = new System.Drawing.Point(122, 46);
+            this.NumAdults.Name = "NumAdults";
+            this.NumAdults.Size = new System.Drawing.Size(149, 20);
+            this.NumAdults.TabIndex = 3;
+//            this.NumAdults.TextChanged += new System.EventHandler(this.NumAdults_TextChanged);
             // 
             // label4
             // 
@@ -123,27 +145,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Adult ";
             // 
-            // NumAdults
-            // 
-            this.NumAdults.Location = new System.Drawing.Point(122, 46);
-            this.NumAdults.Name = "NumAdults";
-            this.NumAdults.Size = new System.Drawing.Size(149, 20);
-            this.NumAdults.TabIndex = 3;
-            // 
-            // NumStud
-            // 
-            this.NumStud.Location = new System.Drawing.Point(123, 86);
-            this.NumStud.Name = "NumStud";
-            this.NumStud.Size = new System.Drawing.Size(147, 20);
-            this.NumStud.TabIndex = 4;
-            // 
-            // NumChild
-            // 
-            this.NumChild.Location = new System.Drawing.Point(122, 131);
-            this.NumChild.Name = "NumChild";
-            this.NumChild.Size = new System.Drawing.Size(148, 20);
-            this.NumChild.TabIndex = 5;
-            // 
             // CalculateButton
             // 
             this.CalculateButton.Location = new System.Drawing.Point(37, 402);
@@ -162,6 +163,7 @@
             this.ClearButton.TabIndex = 5;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // SummaryButton
             // 
@@ -171,6 +173,7 @@
             this.SummaryButton.TabIndex = 6;
             this.SummaryButton.Text = "Summary";
             this.SummaryButton.UseVisualStyleBackColor = true;
+            this.SummaryButton.Click += new System.EventHandler(this.SummaryButton_Click);
             // 
             // ExitButton
             // 
@@ -188,10 +191,10 @@
             this.CashierSummary.Controls.Add(this.TotalReciptsOutput);
             this.CashierSummary.Controls.Add(this.TotalTicketSoldOutput);
             this.CashierSummary.Controls.Add(this.CashierNameOutput);
-            this.CashierSummary.Controls.Add(this.label7);
-            this.CashierSummary.Controls.Add(this.label6);
-            this.CashierSummary.Controls.Add(this.label5);
-            this.CashierSummary.Controls.Add(this.label1);
+            this.CashierSummary.Controls.Add(this.AvgP);
+            this.CashierSummary.Controls.Add(this.TotalRcpt);
+            this.CashierSummary.Controls.Add(this.SoldTickets);
+            this.CashierSummary.Controls.Add(this.cashier);
             this.CashierSummary.Location = new System.Drawing.Point(84, 493);
             this.CashierSummary.Name = "CashierSummary";
             this.CashierSummary.Size = new System.Drawing.Size(343, 223);
@@ -200,57 +203,13 @@
             this.CashierSummary.Text = "Cashier Summary Data";
             this.CashierSummary.Visible = false;
             // 
-            // label1
+            // AvgPricePaidOutput
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cashier Name:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 94);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Total Tickets Sold:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(46, 143);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Total Recipt:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(44, 188);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Avg Price Paid";
-            // 
-            // CashierNameOutput
-            // 
-            this.CashierNameOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CashierNameOutput.Location = new System.Drawing.Point(166, 45);
-            this.CashierNameOutput.Name = "CashierNameOutput";
-            this.CashierNameOutput.Size = new System.Drawing.Size(100, 23);
-            this.CashierNameOutput.TabIndex = 4;
-            // 
-            // TotalTicketSoldOutput
-            // 
-            this.TotalTicketSoldOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TotalTicketSoldOutput.Location = new System.Drawing.Point(165, 93);
-            this.TotalTicketSoldOutput.Name = "TotalTicketSoldOutput";
-            this.TotalTicketSoldOutput.Size = new System.Drawing.Size(100, 23);
-            this.TotalTicketSoldOutput.TabIndex = 5;
+            this.AvgPricePaidOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AvgPricePaidOutput.Location = new System.Drawing.Point(165, 187);
+            this.AvgPricePaidOutput.Name = "AvgPricePaidOutput";
+            this.AvgPricePaidOutput.Size = new System.Drawing.Size(100, 23);
+            this.AvgPricePaidOutput.TabIndex = 7;
             // 
             // TotalReciptsOutput
             // 
@@ -260,13 +219,57 @@
             this.TotalReciptsOutput.Size = new System.Drawing.Size(98, 24);
             this.TotalReciptsOutput.TabIndex = 6;
             // 
-            // AvgPricePaidOutput
+            // TotalTicketSoldOutput
             // 
-            this.AvgPricePaidOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AvgPricePaidOutput.Location = new System.Drawing.Point(165, 187);
-            this.AvgPricePaidOutput.Name = "AvgPricePaidOutput";
-            this.AvgPricePaidOutput.Size = new System.Drawing.Size(100, 23);
-            this.AvgPricePaidOutput.TabIndex = 7;
+            this.TotalTicketSoldOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TotalTicketSoldOutput.Location = new System.Drawing.Point(165, 93);
+            this.TotalTicketSoldOutput.Name = "TotalTicketSoldOutput";
+            this.TotalTicketSoldOutput.Size = new System.Drawing.Size(100, 23);
+            this.TotalTicketSoldOutput.TabIndex = 5;
+            // 
+            // CashierNameOutput
+            // 
+            this.CashierNameOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CashierNameOutput.Location = new System.Drawing.Point(166, 45);
+            this.CashierNameOutput.Name = "CashierNameOutput";
+            this.CashierNameOutput.Size = new System.Drawing.Size(100, 23);
+            this.CashierNameOutput.TabIndex = 4;
+            // 
+            // AvgP
+            // 
+            this.AvgP.AutoSize = true;
+            this.AvgP.Location = new System.Drawing.Point(44, 188);
+            this.AvgP.Name = "AvgP";
+            this.AvgP.Size = new System.Drawing.Size(77, 13);
+            this.AvgP.TabIndex = 3;
+            this.AvgP.Text = "Avg Price Paid";
+            // 
+            // TotalRcpt
+            // 
+            this.TotalRcpt.AutoSize = true;
+            this.TotalRcpt.Location = new System.Drawing.Point(46, 143);
+            this.TotalRcpt.Name = "TotalRcpt";
+            this.TotalRcpt.Size = new System.Drawing.Size(68, 13);
+            this.TotalRcpt.TabIndex = 2;
+            this.TotalRcpt.Text = "Total Recipt:";
+            // 
+            // SoldTickets
+            // 
+            this.SoldTickets.AutoSize = true;
+            this.SoldTickets.Location = new System.Drawing.Point(38, 94);
+            this.SoldTickets.Name = "SoldTickets";
+            this.SoldTickets.Size = new System.Drawing.Size(96, 13);
+            this.SoldTickets.TabIndex = 1;
+            this.SoldTickets.Text = "Total Tickets Sold:";
+            // 
+            // cashier
+            // 
+            this.cashier.AutoSize = true;
+            this.cashier.Location = new System.Drawing.Point(37, 45);
+            this.cashier.Name = "cashier";
+            this.cashier.Size = new System.Drawing.Size(76, 13);
+            this.cashier.TabIndex = 0;
+            this.cashier.Text = "Cashier Name:";
             // 
             // Form1
             // 
@@ -278,7 +281,7 @@
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.CalculateButton);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.UserNameInputBox);
             this.Controls.Add(this.CashierLabel);
             this.Controls.Add(this.NameofApp);
             this.Controls.Add(this.CashierSummary);
@@ -297,7 +300,7 @@
 
         private System.Windows.Forms.Label NameofApp;
         private System.Windows.Forms.Label CashierLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox UserNameInputBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -314,10 +317,10 @@
         private System.Windows.Forms.Label TotalReciptsOutput;
         private System.Windows.Forms.Label TotalTicketSoldOutput;
         private System.Windows.Forms.Label CashierNameOutput;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label AvgP;
+        private System.Windows.Forms.Label TotalRcpt;
+        private System.Windows.Forms.Label SoldTickets;
+        private System.Windows.Forms.Label cashier;
     }
 }
 
