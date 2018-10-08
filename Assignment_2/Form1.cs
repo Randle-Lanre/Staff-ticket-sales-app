@@ -105,7 +105,7 @@ namespace Assignment_2
             AvgPricePaidOutput.Text = avg.ToString("C");
             
 
-         
+         //changes made
             
         }
 
