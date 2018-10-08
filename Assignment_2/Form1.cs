@@ -34,7 +34,8 @@ namespace Assignment_2
         private void CalculateButton_Click(object sender, EventArgs e)
         {
 
-            
+            SummaryButton.Enabled = true; //enables summary button
+
             CashierNameOutput.Text = UserNameInputBox.Text;
             CashierNames.Add(CashierNameOutput.Text);
             try
@@ -85,10 +86,11 @@ namespace Assignment_2
             cashier.Text = "Total Cashiers";
             CashierSummary.Visible = true;
 
+            CalculateButton.Enabled = false;
            // CashierSummary.Text = "Cinema Summary Data";
 
             
-            CashierNames.Add(UserNameInputBox.Text);
+            //CashierNames.Add(UserNameInputBox.Text);
             int NumOfCashiers = CashierNames.Count;
             CashierNameOutput.Text = NumOfCashiers.ToString();
 
@@ -103,10 +105,14 @@ namespace Assignment_2
             TotalReciptsOutput.Text = Trpct.ToString("C");
 
             AvgPricePaidOutput.Text = avg.ToString("C");
-            
 
-         
-            
+
+            TicketsSoldGroupBox.Visible = false;//disable inputs
+            CashierLabel.Visible = false;
+            UserNameInputBox.Visible = false;
+
+
+
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
@@ -121,7 +127,15 @@ namespace Assignment_2
             TotalReciptsOutput.Text = "";
             AvgPricePaidOutput.Text = "";
 
-           // CashierSummary.Text = "Cashier Summary Data";
+            UserNameInputBox.Focus();
+            TicketsSoldGroupBox.Visible = true; //re-enables userinputs 
+
+            CashierLabel.Visible = true;
+            UserNameInputBox.Visible = true;
+            CalculateButton.Enabled = true; //re-enables the calculate button
+
+
+            // CashierSummary.Text = "Cashier Summary Data";
             cashier.Text = "Cashier Name";
 
         }

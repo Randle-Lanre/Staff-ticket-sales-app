@@ -31,7 +31,7 @@
             this.NameofApp = new System.Windows.Forms.Label();
             this.CashierLabel = new System.Windows.Forms.Label();
             this.UserNameInputBox = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TicketsSoldGroupBox = new System.Windows.Forms.GroupBox();
             this.NumChild = new System.Windows.Forms.TextBox();
             this.NumStud = new System.Windows.Forms.TextBox();
             this.NumAdults = new System.Windows.Forms.TextBox();
@@ -51,7 +51,7 @@
             this.TotalRcpt = new System.Windows.Forms.Label();
             this.SoldTickets = new System.Windows.Forms.Label();
             this.cashier = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.TicketsSoldGroupBox.SuspendLayout();
             this.CashierSummary.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,20 +81,20 @@
             this.UserNameInputBox.Size = new System.Drawing.Size(221, 20);
             this.UserNameInputBox.TabIndex = 2;
             // 
-            // groupBox1
+            // TicketsSoldGroupBox
             // 
-            this.groupBox1.Controls.Add(this.NumChild);
-            this.groupBox1.Controls.Add(this.NumStud);
-            this.groupBox1.Controls.Add(this.NumAdults);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(79, 200);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(348, 163);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tickets Sold";
+            this.TicketsSoldGroupBox.Controls.Add(this.NumChild);
+            this.TicketsSoldGroupBox.Controls.Add(this.NumStud);
+            this.TicketsSoldGroupBox.Controls.Add(this.NumAdults);
+            this.TicketsSoldGroupBox.Controls.Add(this.label4);
+            this.TicketsSoldGroupBox.Controls.Add(this.label3);
+            this.TicketsSoldGroupBox.Controls.Add(this.label2);
+            this.TicketsSoldGroupBox.Location = new System.Drawing.Point(79, 200);
+            this.TicketsSoldGroupBox.Name = "TicketsSoldGroupBox";
+            this.TicketsSoldGroupBox.Size = new System.Drawing.Size(348, 163);
+            this.TicketsSoldGroupBox.TabIndex = 3;
+            this.TicketsSoldGroupBox.TabStop = false;
+            this.TicketsSoldGroupBox.Text = "Tickets Sold";
             // 
             // NumChild
             // 
@@ -116,7 +116,6 @@
             this.NumAdults.Name = "NumAdults";
             this.NumAdults.Size = new System.Drawing.Size(149, 20);
             this.NumAdults.TabIndex = 3;
-//            this.NumAdults.TextChanged += new System.EventHandler(this.NumAdults_TextChanged);
             // 
             // label4
             // 
@@ -167,6 +166,7 @@
             // 
             // SummaryButton
             // 
+            this.SummaryButton.Enabled = false;
             this.SummaryButton.Location = new System.Drawing.Point(275, 402);
             this.SummaryButton.Name = "SummaryButton";
             this.SummaryButton.Size = new System.Drawing.Size(88, 44);
@@ -280,15 +280,15 @@
             this.Controls.Add(this.SummaryButton);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.CalculateButton);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.TicketsSoldGroupBox);
             this.Controls.Add(this.UserNameInputBox);
             this.Controls.Add(this.CashierLabel);
             this.Controls.Add(this.NameofApp);
             this.Controls.Add(this.CashierSummary);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.TicketsSoldGroupBox.ResumeLayout(false);
+            this.TicketsSoldGroupBox.PerformLayout();
             this.CashierSummary.ResumeLayout(false);
             this.CashierSummary.PerformLayout();
             this.ResumeLayout(false);
@@ -301,7 +301,7 @@
         private System.Windows.Forms.Label NameofApp;
         private System.Windows.Forms.Label CashierLabel;
         private System.Windows.Forms.TextBox UserNameInputBox;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox TicketsSoldGroupBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
