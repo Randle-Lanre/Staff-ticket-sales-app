@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.NameofApp = new System.Windows.Forms.Label();
             this.CashierLabel = new System.Windows.Forms.Label();
             this.UserNameInputBox = new System.Windows.Forms.TextBox();
@@ -187,6 +188,7 @@
             // 
             // CashierSummary
             // 
+            this.CashierSummary.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.CashierSummary.Controls.Add(this.AvgPricePaidOutput);
             this.CashierSummary.Controls.Add(this.TotalReciptsOutput);
             this.CashierSummary.Controls.Add(this.TotalTicketSoldOutput);
@@ -285,8 +287,9 @@
             this.Controls.Add(this.CashierLabel);
             this.Controls.Add(this.NameofApp);
             this.Controls.Add(this.CashierSummary);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Belmullet Mega Cinema";
             this.TicketsSoldGroupBox.ResumeLayout(false);
             this.TicketsSoldGroupBox.PerformLayout();
             this.CashierSummary.ResumeLayout(false);

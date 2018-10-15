@@ -14,11 +14,11 @@ namespace Assignment_2
     {
 
         List<string> CashierNames = new List<string>();
-        List<double> ListAmount = new List<double>();
-        List<double> Listreceipts = new List<double>();
+        List<decimal> ListAmount = new List<decimal>();
+        List<decimal> Listreceipts = new List<decimal>();
 
 
-        const double adult = 7.70; const double student = 7.0; const double children = 6.26;
+        const decimal adult = 7.70m; const decimal student = 7.0m; const decimal children = 6.26m;
 
 
         public Form1()
@@ -40,7 +40,7 @@ namespace Assignment_2
             CashierNames.Add(CashierNameOutput.Text);
             try
             {
-                int TotalAdults, TotalStud, TotalChild; double Totalsum;
+                int TotalAdults, TotalStud, TotalChild; decimal Totalsum;
 
                 TotalAdults = int.Parse(NumAdults.Text);
                 TotalStud = int.Parse(NumStud.Text);
@@ -50,17 +50,17 @@ namespace Assignment_2
                 TotalTicketSoldOutput.Text = Totalsum.ToString();
                 CashierSummary.Visible = true;
 
-                double AmountAdults, AmountStud, Amountchild; double Rawdata;
+               decimal AmountAdults, AmountStud, Amountchild; decimal Rawdata;
 
-                AmountAdults = TotalAdults * (double)adult;
-                AmountStud = TotalStud * (double)student;
-                Amountchild = TotalChild * (double)children;
+                AmountAdults = TotalAdults * (decimal)adult;
+                AmountStud = TotalStud * (decimal)student;
+                Amountchild = TotalChild * (decimal)children;
                 Rawdata = AmountAdults + AmountStud + Amountchild;
                 Listreceipts.Add(Rawdata);
                 TotalReciptsOutput.Text = Rawdata.ToString("C");
 
 
-                double AvgPricePaid;
+                decimal AvgPricePaid;
                 AvgPricePaid = Rawdata/Totalsum;
                 AvgPricePaidOutput.Text = AvgPricePaid.ToString("C");
 
@@ -77,6 +77,9 @@ namespace Assignment_2
                 MessageBox.Show("Try inputing a number instead of a letter :) ");
             }
 
+            CalculateButton.Enabled = false;
+
+            ClearButton.Enabled = true
         }
 
         private void SummaryButton_Click(object sender, EventArgs e)
@@ -96,9 +99,9 @@ namespace Assignment_2
 
 
 
-            double Tamount = ListAmount.Sum();
-            double Trpct = Listreceipts.Sum();
-            double avg = Trpct / Tamount;
+            decimal Tamount = ListAmount.Sum();
+            decimal Trpct = Listreceipts.Sum();
+            decimal avg = Trpct / Tamount;
 
             TotalTicketSoldOutput.Text = Tamount.ToString();
 
@@ -137,6 +140,10 @@ namespace Assignment_2
 
             // CashierSummary.Text = "Cashier Summary Data";
             cashier.Text = "Cashier Name";
+
+            CalculateButton.Enabled = true;
+
+            ClearButton.Enabled = false;
 
         }
 
