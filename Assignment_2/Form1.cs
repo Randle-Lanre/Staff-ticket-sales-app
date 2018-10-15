@@ -79,7 +79,7 @@ namespace Assignment_2
 
             CalculateButton.Enabled = false;
 
-            ClearButton.Enabled = true
+            ClearButton.Enabled = true;
         }
 
         private void SummaryButton_Click(object sender, EventArgs e)
@@ -87,6 +87,7 @@ namespace Assignment_2
 
 
             cashier.Text = "Total Cashiers";
+            CashierSummary.Text = "Cinema Summary Data";
             CashierSummary.Visible = true;
 
             CalculateButton.Enabled = false;
@@ -140,6 +141,8 @@ namespace Assignment_2
 
             // CashierSummary.Text = "Cashier Summary Data";
             cashier.Text = "Cashier Name";
+            CashierSummary.Text = "Cashier Summary Data";
+
 
             CalculateButton.Enabled = true;
 
