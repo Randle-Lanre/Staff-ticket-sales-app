@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Assignment_2
+namespace BelmulletCinema
 {
     public partial class Form1 : Form
     {
@@ -38,6 +38,7 @@ namespace Assignment_2
 
             CashierNameOutput.Text = UserNameInputBox.Text;
             CashierNames.Add(CashierNameOutput.Text);
+
             try
             {
                 int TotalAdults, TotalStud, TotalChild; decimal Totalsum;
@@ -50,34 +51,41 @@ namespace Assignment_2
                 TotalTicketSoldOutput.Text = Totalsum.ToString();
                 CashierSummary.Visible = true;
 
-               decimal AmountAdults, AmountStud, Amountchild; decimal Rawdata;
 
-                AmountAdults = TotalAdults * (decimal)adult;
-                AmountStud = TotalStud * (decimal)student;
-                Amountchild = TotalChild * (decimal)children;
-                Rawdata = AmountAdults + AmountStud + Amountchild;
-                Listreceipts.Add(Rawdata);
-                TotalReciptsOutput.Text = Rawdata.ToString("C");
+                try
+                {
+                    decimal AmountAdults, AmountStud, Amountchild; decimal Rawdata;
+
+                    AmountAdults = TotalAdults * (decimal)adult;
+                    AmountStud = TotalStud * (decimal)student;
+                    Amountchild = TotalChild * (decimal)children;
+                    Rawdata = AmountAdults + AmountStud + Amountchild;
+                    Listreceipts.Add(Rawdata);
+                    TotalReciptsOutput.Text = Rawdata.ToString("C");
+
+                    try
+                    {
+
+                        decimal AvgPricePaid;
+                        AvgPricePaid = Rawdata / Totalsum;
+                        AvgPricePaidOutput.Text = AvgPricePaid.ToString("C");
 
 
-                decimal AvgPricePaid;
-                AvgPricePaid = Rawdata/Totalsum;
-                AvgPricePaidOutput.Text = AvgPricePaid.ToString("C");
 
+                    }
+                    catch { }
+                    //TotalTicketSoldOutput.Text = Treceipt.ToString();
+                    //CashierSummary.Visible = true;} 
+                }
+                catch { }
 
-
-
-
-                //TotalTicketSoldOutput.Text = Treceipt.ToString();
-                //CashierSummary.Visible = true;} 
 
             }
-            catch 
-            {
-                MessageBox.Show("Try inputing a number instead of a letter :) ");
-            }
+            catch { }
+
 
             CalculateButton.Enabled = false;
+
 
             ClearButton.Enabled = true;
         }
@@ -114,7 +122,7 @@ namespace Assignment_2
             TicketsSoldGroupBox.Visible = false;//disable inputs
             CashierLabel.Visible = false;
             UserNameInputBox.Visible = false;
-
+            ClearButton.Enabled = true; 
 
 
         }

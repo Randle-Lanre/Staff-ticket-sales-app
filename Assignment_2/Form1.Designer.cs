@@ -1,4 +1,4 @@
-﻿namespace Assignment_2
+﻿namespace BelmulletCinema
 {
     partial class Form1
     {

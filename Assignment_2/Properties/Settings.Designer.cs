@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Assignment_2.Properties
+namespace BelmulletCinema.Properties
 {
 
 
