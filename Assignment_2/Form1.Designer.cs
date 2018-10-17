@@ -92,7 +92,7 @@
             this.TicketsSoldGroupBox.Controls.Add(this.label2);
             this.TicketsSoldGroupBox.Location = new System.Drawing.Point(79, 200);
             this.TicketsSoldGroupBox.Name = "TicketsSoldGroupBox";
-            this.TicketsSoldGroupBox.Size = new System.Drawing.Size(348, 163);
+            this.TicketsSoldGroupBox.Size = new System.Drawing.Size(369, 157);
             this.TicketsSoldGroupBox.TabIndex = 3;
             this.TicketsSoldGroupBox.TabStop = false;
             this.TicketsSoldGroupBox.Text = "Tickets Sold";
@@ -277,7 +277,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 741);
+            this.ClientSize = new System.Drawing.Size(540, 733);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.SummaryButton);
             this.Controls.Add(this.ClearButton);

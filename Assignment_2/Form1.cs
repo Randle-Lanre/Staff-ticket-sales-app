@@ -11,14 +11,20 @@ using System.Windows.Forms;
 namespace BelmulletCinema
 {
     public partial class Form1 : Form
-    {
-
+    {    
+        //------------------------------------------------------------------------------------
+        /* List declared to hold information for cashier names, each calculated
+         * results entered
+         */
+         
         List<string> CashierNames = new List<string>();
         List<decimal> ListAmount = new List<decimal>();
         List<decimal> Listreceipts = new List<decimal>();
 
+        //declared constant to be used in the calculation process
+        const decimal ADULT = 7.70m; const decimal STUDENT = 7.0m; const decimal CHILDREN = 6.26m;
 
-        const decimal adult = 7.70m; const decimal student = 7.0m; const decimal children = 6.26m;
+        //------------------------------------------------------------------------------------
 
 
         public Form1()
@@ -26,62 +32,88 @@ namespace BelmulletCinema
             InitializeComponent();
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        
+        //Calcuates the each user transaction
         private void CalculateButton_Click(object sender, EventArgs e)
-        {
+        {   //variables to be used in calculating each user inputs 
+            int TotalAdults, TotalStud, TotalChild; decimal Totalsum;
 
-            SummaryButton.Enabled = true; //enables summary button
 
-            CashierNameOutput.Text = UserNameInputBox.Text;
-            CashierNames.Add(CashierNameOutput.Text);
-
+            //Try and catch have been declared for each numerical inputs
             try
             {
-                int TotalAdults, TotalStud, TotalChild; decimal Totalsum;
-
-                TotalAdults = int.Parse(NumAdults.Text);
-                TotalStud = int.Parse(NumStud.Text);
-                TotalChild = int.Parse(NumChild.Text);
-                Totalsum = TotalAdults + TotalStud + TotalChild;
-                ListAmount.Add(Totalsum);
-                TotalTicketSoldOutput.Text = Totalsum.ToString();
-                CashierSummary.Visible = true;
-
+                TotalAdults = int.Parse(NumAdults.Text); //Checks that adult tickets are numerical
 
                 try
                 {
-                    decimal AmountAdults, AmountStud, Amountchild; decimal Rawdata;
-
-                    AmountAdults = TotalAdults * (decimal)adult;
-                    AmountStud = TotalStud * (decimal)student;
-                    Amountchild = TotalChild * (decimal)children;
-                    Rawdata = AmountAdults + AmountStud + Amountchild;
-                    Listreceipts.Add(Rawdata);
-                    TotalReciptsOutput.Text = Rawdata.ToString("C");
+                    TotalStud = int.Parse(NumStud.Text); //checks tickets entered for students are 
+                                                         //numerical
+                                                         
 
                     try
                     {
+                        TotalChild = int.Parse(NumChild.Text); //checks that the child ticket
+                                                               //inputs are also numerical
+
+                        /* if the inputs for adults, student and 
+                         * children are numerical, it proceeds to perform
+                         * the calculations
+                         */
+                        
+
+                        Totalsum = TotalAdults + TotalStud + TotalChild;
+                        ListAmount.Add(Totalsum);
+                        TotalTicketSoldOutput.Text = Totalsum.ToString();
+                        CashierSummary.Visible = true;
+
+
+                        decimal AmountAdults, AmountStud, Amountchild; decimal Rawdata;
+
+
+                        AmountAdults = TotalAdults * (decimal)ADULT;
+                        AmountStud = TotalStud * (decimal)STUDENT;
+                        Amountchild = TotalChild * (decimal)CHILDREN;
+                        Rawdata = AmountAdults + AmountStud + Amountchild;
+                        Listreceipts.Add(Rawdata);
+                        TotalReciptsOutput.Text = Rawdata.ToString("C");
+
 
                         decimal AvgPricePaid;
                         AvgPricePaid = Rawdata / Totalsum;
                         AvgPricePaidOutput.Text = AvgPricePaid.ToString("C");
 
 
-
                     }
-                    catch { }
-                    //TotalTicketSoldOutput.Text = Treceipt.ToString();
-                    //CashierSummary.Visible = true;} 
+                    catch {NumChild.ForeColor = System.Drawing.Color.Red;
+                        MessageBox.Show("Only Numerical Input accepted\n Please change the " +
+                            "input in RED to a number"); }
                 }
-                catch { }
-
-
+                catch { NumStud.ForeColor= System.Drawing.Color.Red;
+                    MessageBox.Show("Only Numerical Input accepted\n Please change the " +
+                        "input in RED to a number"); }
             }
-            catch { }
+            catch { NumAdults.ForeColor = System.Drawing.Color.Red;
+                MessageBox.Show("Only Numerical Input accepted\n Please change the " +
+                    "input in RED to a number");}
+                   
+
+
+
+            //-----------------------------------------------------
+                SummaryButton.Enabled = true; //enables summary button
+
+                CashierNameOutput.Text = UserNameInputBox.Text;// receive user inputs 
+                CashierNames.Add(CashierNameOutput.Text);
+
+            
+                
+
+
+
+
+            
+
+
 
 
             CalculateButton.Enabled = false;
@@ -89,6 +121,10 @@ namespace BelmulletCinema
 
             ClearButton.Enabled = true;
         }
+                
+
+
+    
 
         private void SummaryButton_Click(object sender, EventArgs e)
         {
@@ -158,7 +194,10 @@ namespace BelmulletCinema
 
         }
 
-       
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }       
 
 }
