@@ -51,7 +51,7 @@
             this.AvgP = new System.Windows.Forms.Label();
             this.TotalRcpt = new System.Windows.Forms.Label();
             this.SoldTickets = new System.Windows.Forms.Label();
-            this.cashier = new System.Windows.Forms.Label();
+            this.Cashier = new System.Windows.Forms.Label();
             this.TicketsSoldGroupBox.SuspendLayout();
             this.CashierSummary.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +81,7 @@
             this.UserNameInputBox.Name = "UserNameInputBox";
             this.UserNameInputBox.Size = new System.Drawing.Size(221, 20);
             this.UserNameInputBox.TabIndex = 2;
+            this.UserNameInputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TicketsSoldGroupBox
             // 
@@ -103,6 +104,7 @@
             this.NumChild.Name = "NumChild";
             this.NumChild.Size = new System.Drawing.Size(148, 20);
             this.NumChild.TabIndex = 5;
+            this.NumChild.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NumStud
             // 
@@ -110,6 +112,7 @@
             this.NumStud.Name = "NumStud";
             this.NumStud.Size = new System.Drawing.Size(147, 20);
             this.NumStud.TabIndex = 4;
+            this.NumStud.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NumAdults
             // 
@@ -117,6 +120,7 @@
             this.NumAdults.Name = "NumAdults";
             this.NumAdults.Size = new System.Drawing.Size(149, 20);
             this.NumAdults.TabIndex = 3;
+            this.NumAdults.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -196,7 +200,7 @@
             this.CashierSummary.Controls.Add(this.AvgP);
             this.CashierSummary.Controls.Add(this.TotalRcpt);
             this.CashierSummary.Controls.Add(this.SoldTickets);
-            this.CashierSummary.Controls.Add(this.cashier);
+            this.CashierSummary.Controls.Add(this.Cashier);
             this.CashierSummary.Location = new System.Drawing.Point(84, 493);
             this.CashierSummary.Name = "CashierSummary";
             this.CashierSummary.Size = new System.Drawing.Size(343, 223);
@@ -264,14 +268,14 @@
             this.SoldTickets.TabIndex = 1;
             this.SoldTickets.Text = "Total Tickets Sold:";
             // 
-            // cashier
+            // Cashier
             // 
-            this.cashier.AutoSize = true;
-            this.cashier.Location = new System.Drawing.Point(37, 45);
-            this.cashier.Name = "cashier";
-            this.cashier.Size = new System.Drawing.Size(76, 13);
-            this.cashier.TabIndex = 0;
-            this.cashier.Text = "Cashier Name:";
+            this.Cashier.AutoSize = true;
+            this.Cashier.Location = new System.Drawing.Point(37, 45);
+            this.Cashier.Name = "Cashier";
+            this.Cashier.Size = new System.Drawing.Size(76, 13);
+            this.Cashier.TabIndex = 0;
+            this.Cashier.Text = "Cashier Name:";
             // 
             // Form1
             // 
@@ -323,7 +327,7 @@
         private System.Windows.Forms.Label AvgP;
         private System.Windows.Forms.Label TotalRcpt;
         private System.Windows.Forms.Label SoldTickets;
-        private System.Windows.Forms.Label cashier;
+        private System.Windows.Forms.Label Cashier;
     }
 }
 
